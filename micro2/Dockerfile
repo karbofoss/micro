@@ -9,5 +9,6 @@ RUN apt-get update
 RUN apt-get install -y postgresql-client
 RUN pip install -r /micro2/requirements.txt
 RUN python /micro2/manage.py collectstatic --noinput
-RUN mkdir /micro2/logs
+RUN mkdir -p /micro2/logs
+RUN mkdir -p /micro2/public/static
 CMD python /micro2/manage.py runserver 8882 >>/micro2/logs/dd.log 2>>/micro2/logs/err.log
