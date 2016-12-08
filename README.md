@@ -1,5 +1,8 @@
-# micro
-Microservices test
+# Prerequisites
+docker
+docker-compose
+
+# Installation
 ```
 git clone https://github.com/imentali/micro
 cd micro
