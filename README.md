@@ -1,8 +1,9 @@
-# Prerequisites
-docker
-docker-compose
+# Demonstration of service interactions
+## Prerequisites
+- docker
+- docker-compose
 
-# Installation
+## Installation
 ```
 git clone https://github.com/imentali/micro
 cd micro
