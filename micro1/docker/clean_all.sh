@@ -6,3 +6,7 @@
 /usr/local/bin/docker-compose rm -f web2
 /usr/local/bin/docker-compose rm -f db1
 /usr/local/bin/docker-compose rm -f db2
+
+#docker rm $(docker ps -a -q)
+#docker rmi $(docker images -q)
+
