@@ -1,4 +1,4 @@
-# Demonstration of service interactions
+# Demonstration of service interaction
 ## Prerequisites
 - docker
 - docker-compose
