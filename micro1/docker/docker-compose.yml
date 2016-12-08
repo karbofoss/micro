@@ -20,7 +20,7 @@ services:
        - ./pgdata2:/var/lib/postgresql/data/
    web2:
      build: micro2
-     command: bash -c "python manage.py runserver 0.0.0.0:8882 2>&1 | tee logs/web2.log"
+     command: bash -c "sleep 10 && python manage.py runserver 0.0.0.0:8882 2>&1 | tee logs/web2.log"
      ports:
        - "8882:8882"
      volumes:
