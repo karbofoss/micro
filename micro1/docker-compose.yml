@@ -1,0 +1,21 @@
+version: '2'
+services:
+   db1:
+     image: postgres:9.4
+   web1:
+     build: micro1
+     command: python manage.py runserver 0.0.0.0:8881
+     ports:
+       - "8881:8881"
+     depends_on:
+       - db1
+       - web2
+   db2:
+     image: postgres:9.4
+   web2:
+     build: micro2
+     command: python manage.py runserver 0.0.0.0:8882
+     ports:
+       - "8882:8882"
+     depends_on:
+       - db2

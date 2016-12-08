@@ -1,0 +1,6 @@
+Django==1.10.4
+djangorestframework==3.5.3
+psycopg2==2.6.2
+coreapi==2.1.1
+coreapi-cli==1.0.6
+requests==2.12.3
