@@ -1,24 +1,48 @@
 {% extends "app/base.html" %}
 {% load hash %}
+{% block head %}
+    <style>
+        li {
+            list-style-type: none;
+        }
+    </style>
+{% endblock %}
 {% block content %}
-    <h1>Persons</h1>
-    <a href="{% url 'person_add' %}">Add new</a>
-    <ul>
-        {% for p in persons %}
-            <li>
-                <a href="{% url 'person_edit' p.id %}">Edit</a> {{ p.FirstName }} {{ p.LastName }} {{ addresses|address:p.AddressId }}
-            </li>
-        {% endfor %}
-    </ul>
-    <h1>Addresses</h1>
-    <a href="{% url 'address_add' %}">Add new</a>
-    <ul>
-        {% for a in addresses.itervalues %}
-            <li>
-                <a href="{% url 'address_edit' a.id %}">Edit</a> {{ a.id }}, {{ a.Street }}, {{ a.City }}, {{ a.State }}, {{ a.Country }}, {{ a.updated }}
-            </li>
-        {% endfor %}
-    </ul>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <span class="panel-title">Persons</span> <a href="{% url 'person_add' %}"><span
+                class="glyphicon glyphicon-plus-sign"></span></a>
+        </div>
+        <div class="panel-body">
+
+
+            <ul class="list-group">
+                {% for p in persons %}
+                    <li class="list-group-item">
+                        <a href="{% url 'person_edit' p.id %}"><span
+                                class="glyphicon glyphicon-pencil"></span></a> {{ p.FirstName }} {{ p.LastName }} {{ addresses|address:p.AddressId }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <span class="panel-title">Addresses</span> <a href="{% url 'address_add' %}"><span
+                class="glyphicon glyphicon-plus-sign"></span></a>
+        </div>
+        <div class="panel-body">
+
+            <ul class="list-group">
+                {% for a in addresses.itervalues %}
+                    <li class="list-group-item">
+                        <a href="{% url 'address_edit' a.id %}"><span
+                                class="glyphicon glyphicon-pencil"></span></a> {{ a.id }}, {{ a.Street }}, {{ a.City }}, {{ a.State }}, {{ a.Country }}, {{ a.updated }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
     <script>
 
     </script>
