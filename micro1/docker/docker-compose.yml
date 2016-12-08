@@ -6,7 +6,7 @@ services:
        - ./pgdata1:/var/lib/postgresql/data/
    web1:
      build: micro1
-     command: bash -c "python manage.py runserver 0.0.0.0:8881  2>&1 | tee logs/web1.log"
+     command: bash -c "sleep 10 && python manage.py runserver 0.0.0.0:8881  2>&1 | tee logs/web1.log"
      ports:
        - "8881:8881"
      volumes:
