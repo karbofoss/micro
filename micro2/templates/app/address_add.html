@@ -1,0 +1,9 @@
+{% extends "app/base.html" %}
+{% block content %}
+    <h1>Address add</h1>
+    <form action="{% url 'address_add' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_ul }}
+        <input type="submit" value="Submit"/>
+    </form>
+{% endblock %}
