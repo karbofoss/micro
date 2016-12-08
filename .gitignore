@@ -1,0 +1,8 @@
+.idea/*
+*.DS_Store
+*.pyc
+__pycache__
+public/static/*
+.gitignore
+micro1/.idea/
+micro2/.idea/
