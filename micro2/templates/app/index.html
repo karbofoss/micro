@@ -1,14 +1,29 @@
 {% extends "app/base.html" %}
+{% block head %}
+    <style>
+        li {
+            list-style-type: none;
+        }
+    </style>
+{% endblock %}
 {% block content %}
-    <h1>Addresses</h1>
-    <a href="{% url 'address_add' %}">Add new</a>
-    <ul>
-        {% for obj in addresses %}
-            <li>
-                <a href="{% url 'address_edit' obj.id %}">Edit</a> {{ obj.id }} {{ obj.Street }}, {{ obj.City }}, {{ obj.State }}, {{ obj.Country }}, {{ obj.updated|date:"Y-m-d H:i:s" }}
-            </li>
-        {% endfor %}
-    </ul>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <span class="panel-title">Addresses</span> <a href="{% url 'address_add' %}"><span
+                class="glyphicon glyphicon-plus-sign"></span></a>
+        </div>
+        <div class="panel-body">
+
+            <ul class="list-group">
+                {% for a in addresses %}
+                    <li class="list-group-item">
+                        <a href="{% url 'address_edit' a.id %}"><span
+                                class="glyphicon glyphicon-pencil"></span></a> {{ a.id }}, {{ a.Street }}, {{ a.City }}, {{ a.State }}, {{ a.Country }}, {{ a.updated }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
     <script>
 
     </script>

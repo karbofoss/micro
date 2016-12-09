@@ -1,4 +1,15 @@
 {% extends "app/base.html" %}
+{% block head %}
+    <style>
+        label {
+            width: 100px;
+        }
+
+        li {
+            list-style-type: none;
+        }
+    </style>
+{% endblock %}
 {% block content %}
     <h1>Address add</h1>
     <form action="{% url 'address_add' %}" method="post">
