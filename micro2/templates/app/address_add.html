@@ -20,8 +20,6 @@
             <span class="panel-title">Address add</span></a>
         </div>
         <div class="panel-body">
-
-            <h1>Address add</h1>
             <form action="{% url 'address_add' %}" method="post">
                 {% csrf_token %}
                 {{ form.as_ul }}
