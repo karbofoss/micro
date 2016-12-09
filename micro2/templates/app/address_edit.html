@@ -8,13 +8,24 @@
         li {
             list-style-type: none;
         }
+
+        .panel {
+            background-color: lightskyblue;
+        }
     </style>
 {% endblock %}
 {% block content %}
-    <h1>Address edit</h1>
-    <form action="{% url 'address_edit' id %}" method="post">
-        {% csrf_token %}
-        {{ form.as_ul }}
-        <input type="submit" value="Submit"/>
-    </form>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <span class="panel-title">Address edit</span></a>
+        </div>
+        <div class="panel-body">
+
+            <form action="{% url 'address_edit' id %}" method="post">
+                {% csrf_token %}
+                {{ form.as_ul }}
+                <input type="submit" value="Submit"/>
+            </form>
+        </div>
+    </div>
 {% endblock %}
